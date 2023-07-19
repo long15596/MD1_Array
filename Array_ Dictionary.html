@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <p>Nhập từ: </p>
+  <input type="text" id="text">
+  <button type="button" id="trans" onclick="translates()" >Dịch</button>
+  <p id="output"></p>
+</body>
+</html>
+<script>
+  function translates() {
+    let a = document.getElementById("text").value;
+    let arrEng = ["car", "bike", "airplane"];
+    let arrVn = ["ô tô", "xe đạp", "máy bay"];
+    let result = "";
+    for (let i = 0; i < arrEng.length; i++) {
+      if (a == arrEng[i]) {
+          result = arrVn[i];
+        } else if (a === arrVn[i]) {
+          result = arrEng[i];
+      }
+    }
+    document.getElementById("output").innerHTML = result;
+  }
+</script>
